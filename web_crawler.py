@@ -16,7 +16,7 @@ for i in range(3):
  # 走訪每一筆貼文
     for post in posts:
         # 取得推文數
-        push = post.select_one('.nrecspan')
+        push = post.select_one('.nrec')
         push_count= push.text if push else '0'
         # 取得文章標題和網址
         title = post.select_one('.title a')
@@ -29,9 +29,9 @@ for i in range(3):
         #**************************************************************** 驗收一修改區域
         # 取得日期和作者
         date = post.select_one('.meta .date')
-        author = post.select_one('.meta .author')
+
         # 將資料加入列表
-        article = {'推文數': push_count, '文章標題': title_text, '文章網址': url_text, '日期': date.text, '作者': author.text}
+        article = {'推文數': push_count, '文章標題': title_text, '文章網址': url_text, '日期': date.text}
         #****************************************************************
         articles.append(article)
         # 取得前一頁的網址
