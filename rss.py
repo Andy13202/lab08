@@ -12,3 +12,5 @@ with open("rss_output.txt", "w", encoding="utf-8") as f:
         f.write(f"時間: {entry.published}\n")
         f.write("-" * 40 + "\n")
 # *************************************************************
+
+print ( "已完成新聞抓取" )
